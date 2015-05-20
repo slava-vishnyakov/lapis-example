@@ -2,27 +2,24 @@
 
 Install OpenResty, lua, luarocks
 
-```sh
-luarocks install lapis
-moonc -w src/ -t compiled/
-lapis server development
-```
-
-### GUI
-
-Atom editor + language-moonscript
-`apm install language-moonscript`
-
-### Sources
-
-Editable sources are in `src/`
-
-### Checkout
+Once:
 
 ```sh
 git submodule init
 git submodule update
+luarocks install lapis
 ```
+
+Everytime:
+
+```sh
+moonc -w src/ -t compiled/
+lapis server development
+```
+
+### Sources
+
+Editable sources are in `src/`
 
 ### Benchmark
 
@@ -52,3 +49,8 @@ ab -k -c 2 -n 1000 http://localhost:8081/postgresql/model
 curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
 > {"value_in_test":1}
 ```
+
+### GUI
+
+Atom editor + language-moonscript
+`apm install language-moonscript`
