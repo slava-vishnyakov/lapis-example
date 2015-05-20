@@ -1,1 +1,1 @@
-compiled/config.lua
+compiled/src/config.lua

@@ -7,6 +7,7 @@ get_redis = require("lapis.redis").get_redis
 local lapis = require("lapis")
 local util = require("lapis.util")
 local http = require("resty.http.simple")
+local local_counter = 0
 local Model
 Model = require("lapis.db.model").Model
 local Lines
@@ -58,7 +59,9 @@ do
     end,
     ["/post"] = json_params(function(self)
       return {
-        json = "the value of param test = " .. tostring(self.params.test)
+        json = {
+          value_in_test = params.test
+        }
       }
     end),
     ["/redis_counter"] = function(self)
@@ -78,6 +81,15 @@ do
       local line = Lines:find(1574489)
       return {
         json = line
+      }
+    end,
+    ["/local_counter"] = function(self)
+      local_counter = local_counter + 1
+      return {
+        json = {
+          local_counter = local_counter,
+          note = "Works correctly only in production mode"
+        }
       }
     end
   }

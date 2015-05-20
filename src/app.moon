@@ -9,6 +9,7 @@ lapis = require "lapis"
 util = require "lapis.util"
 http = require "resty.http.simple"
 
+local_counter = 0
 
 -- Models
 
@@ -45,3 +46,7 @@ class App extends lapis.Application
   "/postgresql/model": =>
     line = Lines\find 1574489
     json: line
+
+  "/local_counter": =>
+    local_counter += 1
+    json: { local_counter: local_counter, note: "Works correctly only in production mode" }
