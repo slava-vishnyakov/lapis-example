@@ -34,4 +34,16 @@ ab -k -c 2 -n 1000 http://localhost:8081/redis_counter
 > 50%      0ms
 > 99%      1ms
 
+ab -k -c 2 -n 1000 http://localhost:8081/postgresql
+> Requests per second:    3578.05 [#/sec] (mean)
+> 50%      1
+> 99%      1
+
+ab -k -c 2 -n 1000 http://localhost:8081/postgresql/model
+> Requests per second:    3172.43 [#/sec] (mean)
+> 50%      1
+> 99%      1
+
+curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
+>
 ```
