@@ -1,0 +1,7 @@
+fastcgi_temp
+logs
+npm-debug.log
+proxy_temp
+scgi_temp
+uwsgi_temp
+.DS_Store
