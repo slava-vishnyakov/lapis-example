@@ -44,6 +44,11 @@ ab -k -c 2 -n 1000 http://localhost:8081/postgresql/model
 > 50%      1
 > 99%      1
 
+> ab -k -c 5 -n 1000 http://localhost:8081/local_counter
+> Requests per second:    6954.15 [#/sec] (mean)
+> 50%      1
+> 99%      1
+
 curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
->
+> {"value_in_test":1}
 ```

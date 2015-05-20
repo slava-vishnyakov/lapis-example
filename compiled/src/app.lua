@@ -60,7 +60,7 @@ do
     ["/post"] = json_params(function(self)
       return {
         json = {
-          value_in_test = params.test
+          value_in_test = self.params.test
         }
       }
     end),

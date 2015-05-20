@@ -1,5 +1,5 @@
-env LAPIS_ENVIRONMENT=production;
-worker_processes 30;
+env LAPIS_ENVIRONMENT=development;
+worker_processes 1;
 error_log stderr notice;
 daemon off;
 pid logs/nginx.pid;
@@ -13,7 +13,7 @@ http {
 
   server {
     listen 8081;
-    lua_code_cache on;
+    lua_code_cache off;
 
     location / {
       default_type text/html;

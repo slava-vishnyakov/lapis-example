@@ -29,7 +29,7 @@ class App extends lapis.Application
 
   -- curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
   "/post": json_params =>
-    json: {value_in_test: params.test}
+    json: {value_in_test: @params.test}
 
 
   "/redis_counter": =>
