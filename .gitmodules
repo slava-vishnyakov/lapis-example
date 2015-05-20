@@ -1,0 +1,6 @@
+[submodule "lapis-redis"]
+    path = vendor/lapis-redis
+    url = git@github.com:leafo/lapis-redis.git
+[submodule "lua-resty-http-simple"]
+    path = vendor/lua-resty-http-simple
+    url = git@github.com:bakins/lua-resty-http-simple.git
