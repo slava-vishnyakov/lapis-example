@@ -54,3 +54,15 @@ curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:
 
 Atom editor + language-moonscript
 `apm install language-moonscript`
+
+#### For Mac OS X
+
+```sh
+brew install pcre
+./configure \
+             --with-cc-opt="-I/usr/local/include" \
+             --with-ld-opt="-L/usr/local/lib" \
+             -j4
+make -j4
+sudo make install
+```
