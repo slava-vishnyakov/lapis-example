@@ -2,15 +2,37 @@
 
 Install OpenResty, lua, luarocks
 
+```sh
+sudo apt-get install build-essential libreadline-dev libncurses5-dev libpcre3-dev libssl-dev perl make
+wget http://openresty.org/download/ngx_openresty-1.7.10.1.tar.gz
+tar xzvf ngx_openresty-1.7.10.1.tar.gz
+cd ngx_openresty-1.7.10.1/
+./configure -j4 --with-pcre-jit --with-ipv6
+make -j4
+sudo make install
+```
+
 Once:
 
 ```sh
+sudo apt-get install luarocks luajit
+sudo luarocks install lapis
+
+sudo apt-get install git-core
+git clone https://github.com/slava-vishnyakov/openresty-example.git
+
+cd openresty-example
 git submodule init
 git submodule update
-luarocks install lapis
+
+echo http://$(wget -qO - http://api.ipify.org):8081/http_request
+lapis server development
+
+# org
+lapis server production 2>/dev/null
 ```
 
-Everytime:
+Development:
 
 ```sh
 moonc -w src/ -t compiled/
@@ -41,10 +63,13 @@ ab -k -c 2 -n 1000 http://localhost:8081/postgresql/model
 > 50%      1
 > 99%      1
 
-> ab -k -c 5 -n 1000 http://localhost:8081/local_counter
+ab -k -c 5 -n 1000 http://localhost:8081/local_counter
 > Requests per second:    6954.15 [#/sec] (mean)
 > 50%      1
 > 99%      1
+
+ab -k -c 100 -n 100 http://localhost:8081/http_request
+> Requests per second:    239.13 [#/sec] (mean) # зависит от скорости ответа httpbin.org
 
 curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
 > {"value_in_test":1}
