@@ -47,8 +47,8 @@ Editable sources are in `src/`
 
 ```sh
 lapis server production 2>/dev/null
-ab -k -c 2 -n 1000 http://localhost:8081/redis_counter
 
+ab -k -c 2 -n 1000 http://localhost:8081/redis_counter
 > Requests per second:    6400.61 [#/sec] (mean)
 > 50%      0ms
 > 99%      1ms
