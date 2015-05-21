@@ -54,7 +54,9 @@ do
         ['path'] = '/ip'
       })
       return {
-        json = tostring(util.from_json(res.body).origin)
+        json = {
+          response_from_httpbin_org_decoded = util.from_json(res.body).origin
+        }
       }
     end,
     ["/post"] = json_params(function(self)

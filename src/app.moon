@@ -24,7 +24,7 @@ db = require "lapis.db"
 class App extends lapis.Application
   "/http_request": =>
     res, err = http.request("httpbin.org", 80, {'path':'/ip'})
-    json: "#{util.from_json(res.body).origin}"
+    json: {response_from_httpbin_org_decoded: util.from_json(res.body).origin}
 
 
   -- curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
