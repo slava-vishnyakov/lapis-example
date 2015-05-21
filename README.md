@@ -35,6 +35,7 @@ lapis server production 2>/dev/null
 Development:
 
 ```sh
+sudo luarocks install moonscript
 moonc -w src/ -t compiled/
 lapis server development
 ```
@@ -78,7 +79,10 @@ curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:
 ### GUI
 
 Atom editor + language-moonscript
-`apm install language-moonscript`
+
+```sh
+apm install language-moonscript
+```
 
 #### For Mac OS X
 
