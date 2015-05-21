@@ -43,6 +43,7 @@ lapis server development
 ### Sources
 
 Editable sources are in `src/`
+https://github.com/slava-vishnyakov/lapis-example/blob/master/src/app.moon#L25
 
 ### Benchmark
 
