@@ -19,7 +19,7 @@ sudo apt-get install luarocks luajit
 sudo luarocks install lapis
 
 sudo apt-get install git-core
-git clone https://github.com/slava-vishnyakov/openresty-example.git
+git clone https://github.com/slava-vishnyakov/lapis-example.git
 
 cd openresty-example
 git submodule init
