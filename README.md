@@ -71,7 +71,7 @@ ab -k -c 5 -n 1000 http://localhost:8081/local_counter
 > 99%      1
 
 ab -k -c 100 -n 100 http://localhost:8081/http_request
-> Requests per second:    239.13 [#/sec] (mean) # зависит от скорости ответа httpbin.org
+> Requests per second:    239.13 [#/sec] (mean) # depends on httpbin.org speed
 
 curl -XPOST -d'{"test":1}' -H 'Content-Type: application/json' http://localhost:8081/post
 > {"value_in_test":1}
